@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>N64 in Akihabara — Japan Sales Plan</title>
+<meta name="description" content="Working plan for bringing a German-made N64 cartridge to Japanese retail. Shared by Yuuki, Steve and the developer.">
+<style>
+:root{
+  --paper:#f6f5f2; --card:#ffffff; --ink:#191a1c; --ink2:#4a4c52; --muted:#74767d;
+  --line:#e4e2dd; --line2:#d3d0c9;
+  --accent:#2457c5; --accent-bg:#eaf0fd;
+  --warn:#a85a09; --warn-bg:#fdf3e3;
+  --ok:#1f7a4d; --ok-bg:#e8f5ee;
+  --hot:#c33c22; --hot-bg:#fdeeea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans JP","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  line-height:1.72; font-size:16px; padding:0 16px 96px;
+}
+.wrap{max-width:780px;margin:0 auto}
+
+/* header */
+header{padding:40px 0 22px;border-bottom:2px solid var(--ink);margin-bottom:28px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-size:30px;line-height:1.28;font-weight:800;margin:8px 0 10px;letter-spacing:-.01em}
+.sub{color:var(--ink2);font-size:15px}
+.meta{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* lang switch */
+.langbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.langbar button{
+  font:inherit;font-size:13px;font-weight:700;cursor:pointer;
+  padding:7px 14px;border-radius:999px;border:1px solid var(--line2);
+  background:var(--card);color:var(--ink2);
+}
+.langbar button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* deadline banner */
+.deadline{
+  background:var(--hot-bg);border:1px solid #f0bfb3;border-left:5px solid var(--hot);
+  border-radius:10px;padding:16px 18px;margin-bottom:30px;
+}
+.deadline .t{font-weight:800;color:var(--hot);font-size:14px;letter-spacing:.04em;margin-bottom:5px}
+.deadline .b{font-size:15px;color:var(--ink)}
+
+/* sections */
+section{margin-bottom:36px}
+h2{
+  font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
+  display:flex;align-items:center;gap:9px;
+}
+h2::before{content:attr(data-n);background:var(--accent);color:#fff;border-radius:5px;
+  width:21px;height:21px;display:grid;place-items:center;font-size:11px;letter-spacing:0;flex:none}
+h3{font-size:16px;font-weight:700;margin:20px 0 7px}
+p{margin-bottom:12px;color:var(--ink2)}
+ul{list-style:none}
+li{position:relative;padding-left:19px;margin-bottom:9px;color:var(--ink2)}
+li::before{content:"";position:absolute;left:3px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--line2)}
+strong{color:var(--ink);font-weight:700}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.card + .card{margin-top:12px}
+
+/* schedule */
+.slot{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.slot:last-child{border-bottom:0}
+.slot .when{flex:none;width:112px;font-weight:700;font-size:13px;color:var(--ink);line-height:1.5}
+.slot .when em{display:block;font-style:normal;font-weight:500;color:var(--muted);font-size:12px}
+.slot .what{font-size:15px;color:var(--ink2)}
+.slot.key{background:var(--accent-bg);margin:0 -22px;padding:13px 22px;border-bottom:0;border-radius:8px}
+.slot.key .what{color:var(--ink);font-weight:600}
+
+/* q list */
+ol.q{list-style:none;counter-reset:q}
+ol.q li{counter-increment:q;padding-left:36px;margin-bottom:14px}
+ol.q li::before{
+  content:counter(q);position:absolute;left:0;top:3px;width:24px;height:24px;border-radius:6px;
+  background:var(--warn-bg);color:var(--warn);font-size:12px;font-weight:800;
+  display:grid;place-items:center;border:1px solid #edd9b5;
+}
+.who{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
+  padding:2px 8px;border-radius:4px;background:var(--line);color:var(--ink2);margin-left:6px;vertical-align:1px}
+
+.note{font-size:13px;color:var(--muted);border-left:3px solid var(--line2);padding-left:12px;margin-top:12px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;
+  background:var(--warn-bg);color:var(--warn);border:1px solid #edd9b5}
+.tag.ok{background:var(--ok-bg);color:var(--ok);border-color:#bde0cc}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td:first-child{font-weight:600;color:var(--ink);width:38%}
+
+footer{border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted)}
+a{color:var(--accent)}
+[hidden]{display:none !important}
+@media (max-width:560px){
+  h1{font-size:24px}
+  .slot{flex-direction:column;gap:2px}
+  .slot .when{width:auto}
+  .slot .when em{display:inline;margin-left:8px}
+  .card{padding:17px 16px}
+  .slot.key{margin:0 -16px;padding:13px 16px}
+  td:first-child{width:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ================= ENGLISH ================= -->
+<div data-lang="en">
+<header>
+  <div class="langbar">
+    <button type="button" data-set="en" aria-pressed="true">English</button>
+    <button type="button" data-set="ja" aria-pressed="false">日本語</button>
+    <button type="button" data-set="zh" aria-pressed="false">繁體中文</button>
+  </div>
+  <div class="kicker">Working plan · shared document</div>
+  <h1>Selling a new N64 cartridge<br>in Akihabara</h1>
+  <p class="sub">A short, honest plan for getting a German-made Nintendo 64 game onto a Japanese shop shelf. Written after the Yuuki × Steve call on 19 Sep 2026.</p>
+  <p class="meta">For: the developer · Steve (Stephen O'Neill) · Yuuki (Yuki Ichihara) &nbsp;|&nbsp; Last updated 19 Sep 2026</p>
+</header>
+
+<div class="deadline">
+  <div class="t">HARD DEADLINE</div>
+  <div class="b">The developer flies back to Germany on the evening of <strong>Tuesday 22 September</strong>. The only window for an in-person shop meeting is <strong>Tuesday daytime</strong>. BEEP Akihabara is closed on Wednesdays, so there is no second chance this trip.</div>
+</div>
+
+<section>
+  <h2 data-n="1">What we know</h2>
+  <div class="card">
+    <ul>
+      <li>Steve went to <strong>Tokyo Game Show 2026</strong> on his own and, on 18 Sep, met a <strong>German game developer</strong> there. He also recorded an interview with them for YouTube.</li>
+      <li>The developer makes a <strong>brand-new game for the Nintendo 64</strong> — not a port, not a re-release. A retro-styled new title. There is also a <strong>Steam version</strong>.</li>
+      <li>Two titles exist so far.</li>
+      <li>The N64 cartridge carries a <strong>Wi-Fi board, so the game plays online on real N64 hardware</strong>. That is the headline feature.</li>
+      <li>Steve is <strong>physically holding a copy</strong> of the cartridge right now.</li>
+      <li>The developer wants to sell the <strong>physical cartridge in Japan</strong> — Steam is not the point here.</li>
+      <li>The target shop is <strong>BEEP Akihabara</strong>. Steve says Mr. Maruyama there is interested in revival-style projects.</li>
+      <li>The ask to Yuuki: <strong>handle the Japanese-language sales conversation</strong> — bring the product in, pitch it, negotiate.</li>
+    </ul>
+    <p class="note">Source: Google Meet auto-captions, 19 Sep 2026, 10:32–10:49 JST. Steve speaks Japanese as a learner and the captions are rough, so the items above are a reconstruction, not a quote.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="2">Fixed schedule</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">Sat 19 Sep<em>done</em></div>
+      <div class="what">Yuuki × Steve call. Brief given, dates blocked.</div>
+    </div>
+    <div class="slot key">
+      <div class="when">Tue 22 Sep<em>13:00–15:00</em></div>
+      <div class="what">BEEP Akihabara with Steve and the developer. <span class="tag">not yet confirmed with the shop</span></div>
+    </div>
+    <div class="slot">
+      <div class="when">Tue 22 Sep<em>evening</em></div>
+      <div class="what">Developer flies home to Germany.</div>
+    </div>
+    <div class="slot">
+      <div class="when">Wed 23 Sep<em>11:00–13:00</em></div>
+      <div class="what">Lunch with Steve and Erica. Follow-up and next steps — the developer will already be gone.</div>
+    </div>
+    <p class="note">BEEP Akihabara: 15-1 Kanda-Nerimacho, Chiyoda-ku, inside SEEKBASE (east side of Akihabara Station, under the tracks). 11:00–20:00, closed Wednesdays. Address confirmed Jul 2026 — worth one phone call before setting off.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="3">Open questions — answer these before Tuesday</h2>
+  <div class="card">
+    <ol class="q">
+      <li><strong>Who is the developer?</strong> Name, studio, official website, game titles. None of this was captured on the call. Without it Yuuki cannot prepare a pitch. <span class="who">Steve</span></li>
+      <li><strong>Is there an appointment?</strong> Has Mr. Maruyama agreed to a meeting on Tuesday afternoon, or is this a cold walk-in? If nobody has called, someone must — today. <span class="who">Steve</span></li>
+      <li><strong>What does the developer actually want?</strong> Consignment or an outright sale to the shop? Target retail price? What margin do they need? <span class="who">Developer</span></li>
+      <li><strong>How many units are in Japan right now</strong>, and how many can be shipped from Germany afterwards? <span class="who">Developer</span></li>
+      <li><strong>Is there any Japanese-language material?</strong> Box, manual, or even a one-page insert. A shop can sell an English box, but it sells better with a Japanese slip. <span class="who">Developer</span></li>
+      <li><strong>Who imports and holds stock in Japan?</strong> Somebody has to be the importer of record and somebody has to store the boxes. This is the question that usually kills deals like this. <span class="who">All three</span></li>
+      <li><strong>Which wireless module is on the cartridge?</strong> Or is the Wi-Fi in the console, not the cart? This decides whether Japanese radio certification is a problem at all — see section 6. <span class="who">Developer</span></li>
+      <li><strong>What is Yuuki's role and compensation?</strong> One-off interpreting, or ongoing sales representation in Japan? This needs to be said out loud before Tuesday, not after. <span class="who">Yuuki</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="4">Tuesday runbook</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">–12:00</div>
+      <div class="what">Yuuki is teaching until noon. No meet-up before that.</div>
+    </div>
+    <div class="slot">
+      <div class="when">12:40</div>
+      <div class="what">Meet Steve and the developer outside SEEKBASE. Ten minutes to agree who says what.</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:00</div>
+      <div class="what">Into BEEP. Yuuki leads in Japanese. Steve translates for the developer. Show the cartridge running if the shop allows it.</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:45</div>
+      <div class="what">Either a yes with numbers, or a clean "let us send you a proposal by email". Do not leave without a named contact and an address to send to.</div>
+    </div>
+    <div class="slot">
+      <div class="when">after</div>
+      <div class="what">Yuuki writes up the agreed terms in Japanese and sends them the same evening, before the developer's flight.</div>
+    </div>
+    <p class="note">If Steve wants to film inside the shop, ask permission when the meeting is booked — not at the door.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="5">The pitch</h2>
+  <div class="card">
+    <h3>Lead with the one thing nobody else has</h3>
+    <p>A <strong>new N64 cartridge that plays online over Wi-Fi on original hardware</strong> is not a retro reissue — it is a thing that did not exist in 1998. That is the sentence the shop repeats to its customers, so it has to be the first sentence out of our mouths.</p>
+    <h3>Why this shop</h3>
+    <p>BEEP already sells doujin and indie titles on consignment and its customers are exactly the people who own a working N64. This is not a favour we are asking; it is stock that suits their shelf.</p>
+    <h3>What we bring beyond the boxes</h3>
+    <p>Steve runs two YouTube channels — <strong>Moving Socks 2.0</strong> (178k subscribers) and <strong>Stevo's Hobbies</strong> (17.6k, retro console modding) — and has already filmed a developer interview at TGS. A QR code on the shelf card pointing at that video is free foot traffic for the shop. Yuuki also runs Akihabara tours and can put the shop in front of visiting fans.</p>
+    <h3>The modest ask</h3>
+    <p>Do not ask for a big order. Ask them to take <strong>10–20 units on consignment</strong> and see how they move. Small, reversible, easy to say yes to.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="6">Groundwork before anyone signs</h2>
+  <div class="card">
+    <h3>The Radio Law is the one that can stop this</h3>
+    <p>If the <strong>Wi-Fi radio sits on the cartridge board</strong>, then what we are selling in Japan is radio equipment, and radio equipment sold here needs Japanese technical conformity certification — the <strong>giteki（技適）mark</strong>. Japanese shops routinely decline uncertified wireless hardware, and BEEP is the kind of shop that knows this. There are two clean answers: the board already uses a giteki-certified module such as an ESP-WROOM-32, or the Japanese units ship with the online feature documented as not certified for use in Japan.</p>
+    <p><strong>Ask the developer which wireless module is on the board, before Tuesday.</strong> If the Wi-Fi is actually in the console rather than the cartridge, this whole issue disappears — but we need to know which it is. Raise it ourselves in the meeting; being the ones who brought it up reads as competence, being caught by it reads as amateur.</p>
+    <h3>The rest is unremarkable</h3>
+    <ul>
+      <li><strong>Consignment rate:</strong> 20–30% to the shop is the normal band for doujin and homebrew hardware in Akihabara.</li>
+      <li><strong>Customs:</strong> game cartridges enter at 0% duty. Import consumption tax of 10% applies on a commercial quantity.</li>
+      <li><strong>CERO rating:</strong> not required. Homebrew sits outside the ratings scheme entirely.</li>
+      <li><strong>Trademarks:</strong> no Nintendo marks or "NINTENDO 64" logo on the packaging. Wording like "compatible with N64" only.</li>
+      <li><strong>Warranty:</strong> retro consoles vary wildly, so include a line saying the developer handles initial-defect support directly.</li>
+    </ul>
+    <p class="note">Desk research, not legal advice. The giteki point in particular should be confirmed with the developer and, if it applies, with someone who has actually imported wireless hardware.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="7">Numbers to leave with</h2>
+  <div class="card">
+    <table>
+      <tr><th>Item</th><th>Why it matters</th></tr>
+      <tr><td>Consignment rate (%)</td><td>Decides whether this is worth shipping from Germany at all.</td></tr>
+      <tr><td>Retail price in yen</td><td>Must survive shipping and the shop's cut and still look sane next to a used N64 game.</td></tr>
+      <tr><td>First delivery quantity</td><td>Keep it small. Restocking is a good problem.</td></tr>
+      <tr><td>Payment cycle and method</td><td>Cross-border payment to Germany — Wise or a bank transfer, and how often.</td></tr>
+      <tr><td>Who stores the stock</td><td>The shop, Steve, or Yuuki. Whoever it is should be named on Tuesday.</td></tr>
+      <tr><td>Named contact at the shop</td><td>So the follow-up email reaches a person and not an inbox.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="8">If BEEP says no</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Other Akihabara shops:</strong> Super Potato, Suruga-ya Akihabara Game-kan, Retro Game Camp, Trader.</li>
+      <li><strong>Online:</strong> BOOTH and Mercari Shops both take overseas indie hardware titles and need no shop relationship.</li>
+      <li><strong>Events:</strong> Game Legend and Comiket reach exactly this audience and sell copies in a single day.</li>
+      <li><strong>Media first, retail second:</strong> publish Steve's interview, let demand show up, then walk back into the shop with numbers instead of a pitch.</li>
+    </ul>
+    <p class="note">A no on Tuesday is a scheduling problem, not a verdict. Everything above still works after the developer has flown home.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="9">Roles and money — undecided</h2>
+  <div class="card">
+    <p>Yuuki's side of this is deliberately left open, because it should be agreed between the three of you rather than assumed. Three shapes it could take:</p>
+    <ul>
+      <li><strong>A. Interpreter for the day.</strong> One flat fee, one afternoon, no further obligation.</li>
+      <li><strong>B. Sales representation in Japan.</strong> Ongoing — shop relationships, restocking, Japanese paperwork — for a percentage of Japanese sales.</li>
+      <li><strong>C. Trade.</strong> No money changes hands; Steve's channels cover the Akihabara tour, and Yuuki's tours carry the game.</li>
+    </ul>
+    <p class="note">Yuuki decides which of these to put on the table. Nothing here is agreed yet.</p>
+  </div>
+</section>
+
+<footer>
+  This page is a working document, not an agreement. Anything marked as unconfirmed is exactly that.<br>
+  Prepared for Yuuki, Steve and the developer · 19 September 2026
+</footer>
+</div>
+
+<!-- ================= 日本語 ================= -->
+<div data-lang="ja" hidden>
+<header>
+  <div class="langbar">
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+    <button type="button" data-set="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-set="zh" aria-pressed="false">繁體中文</button>
+  </div>
+  <div class="kicker">作戦メモ・共有用</div>
+  <h1>N64の新作カートリッジを<br>秋葉原で売る</h1>
+  <p class="sub">ドイツ製のニンテンドウ64向け新作を、日本の店頭に並べるための短い計画。2026年9月19日のユウキ×Steveの通話をもとに作成。</p>
+  <p class="meta">共有先: 開発者 / Steve（Stephen O'Neill）/ ユウキ（市原 有希）&nbsp;|&nbsp; 最終更新 2026年9月19日</p>
+</header>
+
+<div class="deadline">
+  <div class="t">動けるのは1日だけ</div>
+  <div class="b">開発者は<strong>9月22日（火）の夜</strong>にドイツへ帰る。直接店に持ち込めるのは<strong>22日の日中だけ</strong>。BEEP秋葉原は水曜定休なので、今回の滞在では二度目のチャンスはない。</div>
+</div>
+
+<section>
+  <h2 data-n="1">分かっていること</h2>
+  <div class="card">
+    <ul>
+      <li>Steveは<strong>東京ゲームショウ2026</strong>に一人で行き、9月18日に会場で<strong>ドイツ人のゲーム開発者</strong>と会った。YouTube用のインタビューも撮っている。</li>
+      <li>その開発者が作っているのは<strong>ニンテンドウ64向けの完全新作</strong>。移植でも復刻でもなく、レトロ風の新しいタイトル。<strong>Steam版もある</strong>。</li>
+      <li>今のところタイトルは2本。</li>
+      <li>カートリッジに<strong>WiFiが載っていて、N64の実機でオンライン対戦ができる</strong>。ここが一番の売り。</li>
+      <li>Steveは今<strong>実物のカートリッジを預かって持っている</strong>。</li>
+      <li>開発者が売りたいのは<strong>日本での物理カートリッジ</strong>。Steamの話ではない。</li>
+      <li>狙いは<strong>BEEP秋葉原</strong>。Steveいわく、同店の丸山さんはリバイバル系のプロジェクトに関心があるとのこと。</li>
+      <li>ユウキへの依頼は<strong>日本語での営業</strong>。持ち込み・説明・条件交渉を引き受けてほしい、という話。</li>
+    </ul>
+    <p class="note">出典: 2026年9月19日 10:32〜10:49 JST のGoogle Meet自動字幕。Steveは日本語学習者で字幕の誤認識が多いため、上記は復元であって発言そのままではない。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="2">確定している予定</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">9/19（土）<em>済み</em></div>
+      <div class="what">ユウキ×Steveの通話。依頼を受領し、日程を押さえた。</div>
+    </div>
+    <div class="slot key">
+      <div class="when">9/22（火）<em>13:00–15:00</em></div>
+      <div class="what">Steve・開発者とBEEP秋葉原へ。<span class="tag">店側とのアポは未確定</span></div>
+    </div>
+    <div class="slot">
+      <div class="when">9/22（火）<em>夜</em></div>
+      <div class="what">開発者がドイツへ帰国。</div>
+    </div>
+    <div class="slot">
+      <div class="when">9/23（水）<em>11:00–13:00</em></div>
+      <div class="what">SteveとEricaとランチ。振り返りと次の手。開発者はもういない。</div>
+    </div>
+    <p class="note">BEEP秋葉原: 千代田区神田練塀町15-1 SEEKBASE内（秋葉原駅の東側・高架下）。11:00–20:00、水曜定休。住所は2026年7月に確認済みだが、出発前に一本電話を入れておきたい。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="3">火曜までに埋める空欄</h2>
+  <div class="card">
+    <ol class="q">
+      <li><strong>開発者は誰なのか。</strong> 氏名・スタジオ名・公式サイト・ゲームのタイトル。通話では一つも記録できていない。これが無いと営業の準備ができない。<span class="who">Steve</span></li>
+      <li><strong>アポは取れているのか。</strong> 丸山さんが火曜午後で合意しているのか、それとも飛び込みなのか。誰も連絡していないなら、今日中に誰かが連絡する。<span class="who">Steve</span></li>
+      <li><strong>開発者の希望条件。</strong> 委託か買取か。希望小売価格。最低限ほしい取り分。<span class="who">開発者</span></li>
+      <li><strong>今、日本に何本あるのか。</strong> そして後からドイツから何本送れるのか。<span class="who">開発者</span></li>
+      <li><strong>日本語の印刷物はあるか。</strong> 箱・説明書、なければ1枚の差し込みでもいい。英語の箱でも売れるが、日本語の紙が1枚あると売れ方が変わる。<span class="who">開発者</span></li>
+      <li><strong>誰が輸入して、誰が在庫を持つのか。</strong> 輸入者になる人と、箱を置いておく人が必要。この手の話はたいていここで止まる。<span class="who">3人で</span></li>
+      <li><strong>カートリッジに載っている無線モジュールは何か。</strong> そもそもWiFiは本体側の機能ではないのか。技適が問題になるかどうかがこれで決まる（6を参照）。<span class="who">開発者</span></li>
+      <li><strong>ユウキの役割と報酬。</strong> 単発の通訳なのか、日本での継続的な営業代行なのか。火曜の後ではなく前に口に出しておく。<span class="who">ユウキ</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="4">火曜当日の段取り</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">〜12:00</div>
+      <div class="what">ユウキはレッスンで昼まで埋まっている。午前の合流は無理。</div>
+    </div>
+    <div class="slot">
+      <div class="when">12:40</div>
+      <div class="what">SEEKBASE前でSteve・開発者と合流。10分で「誰が何を話すか」だけ決める。</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:00</div>
+      <div class="what">BEEPへ。ユウキが日本語で回し、Steveが開発者に英語で通す。店が許すなら実機で動かして見せる。</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:45</div>
+      <div class="what">数字つきのYESを取るか、「後日メールで提案を送ります」で綺麗に終えるか。担当者の名前と送り先だけは必ず持ち帰る。</div>
+    </div>
+    <div class="slot">
+      <div class="when">その後</div>
+      <div class="what">ユウキが決まったことを日本語で文章にし、開発者のフライト前にその日のうちに送る。</div>
+    </div>
+    <p class="note">Steveが店内で撮影したいなら、アポを取る時点で許可を取る。当日ドアの前で聞かない。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="5">商談の中身</h2>
+  <div class="card">
+    <h3>他に無いものを最初に言う</h3>
+    <p><strong>N64の実機でWiFiオンライン対戦ができる新作カートリッジ</strong>は、レトロの復刻ではない。1998年には存在しなかったものだ。店員さんがお客さんに繰り返す一文になるので、こちらの第一声もここにする。</p>
+    <h3>なぜこの店なのか</h3>
+    <p>BEEPは同人・インディーの委託販売を既にやっていて、客層はまさに「動くN64を持っている人」。お願いごとではなく、その棚に合う商品を持ってきた、という話にする。</p>
+    <h3>箱以外に持ち込めるもの</h3>
+    <p>SteveはYouTubeを2本持っている——<strong>Moving Socks 2.0</strong>（17.8万人）と<strong>Stevo's Hobbies</strong>（1.76万人・レトロ機改造）。TGSで開発者インタビューを既に撮影済み。棚のPOPにその動画のQRを載せれば、店にとっては無料の集客になる。ユウキ側も秋葉原ツアーを持っているので、来日中のファンを店に流せる。</p>
+    <h3>頼み方は小さく</h3>
+    <p>大口は狙わない。<strong>まず委託で10〜20本</strong>置いてもらって、動きを見る。小さくて、やめられて、YESと言いやすい形にする。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="6">署名の前に踏んでおく足場</h2>
+  <div class="card">
+    <h3>止まるとしたら電波法</h3>
+    <p><strong>WiFiのモジュールがカートリッジ基板側に載っている</strong>なら、日本で売るのは無線機器ということになり、日本国内で販売する無線機器には<strong>技適マーク</strong>が要る。日本の店は技適の無い無線機器の取り扱いを断るのが普通で、BEEPはそれを知っている側の店。逃げ道は2つ。基板が技適取得済みのモジュール（ESP-WROOM-32など）を使っているか、日本向けの個体は「オンライン機能は日本国内では技適未取得」と明記して出すか。</p>
+    <p><strong>基板に載っている無線モジュールが何なのかを、火曜までに開発者に聞く。</strong>WiFiがカートリッジではなく本体側の機能なら、この論点は丸ごと消える。ただしどちらなのかは知っておく必要がある。商談では<strong>こちらから先に出す</strong>。自分から言えば分かっている人に見え、店に指摘されると素人に見える。</p>
+    <h3>それ以外は普通の話</h3>
+    <ul>
+      <li><strong>委託手数料:</strong> 秋葉原の同人・ホームブリュー系ハードで、店側の取り分は20〜30%が相場。</li>
+      <li><strong>通関:</strong> ゲームカートリッジの関税は0%。商用の数量なら輸入消費税10%がかかる。</li>
+      <li><strong>CERO:</strong> 不要。ホームブリューはそもそもレーティング制度の外。</li>
+      <li><strong>商標:</strong> パッケージに任天堂の商標や「NINTENDO 64」のロゴを使わない。「N64互換」程度の表現に留める。</li>
+      <li><strong>保証の文言:</strong> レトロ実機は個体差が大きいので、初期不良は開発者が直接対応する旨を1行入れておく。</li>
+    </ul>
+    <p class="note">机上調査であって法的助言ではない。とくに技適の件は開発者に確認し、該当するなら無線機器の輸入経験がある人に当てること。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="7">持ち帰る数字</h2>
+  <div class="card">
+    <table>
+      <tr><th>項目</th><th>なぜ要るか</th></tr>
+      <tr><td>委託手数料（％）</td><td>そもそもドイツから送る価値があるかがこれで決まる。</td></tr>
+      <tr><td>店頭価格（円）</td><td>送料と店の取り分を引いても成立し、かつ中古N64ソフトの隣で不自然でない額。</td></tr>
+      <tr><td>初回の納品本数</td><td>小さく始める。追加発注は良い悩み。</td></tr>
+      <tr><td>支払いサイクルと送金方法</td><td>ドイツへの海外送金。Wiseか銀行振込か、どの頻度か。</td></tr>
+      <tr><td>在庫を誰が持つか</td><td>店・Steve・ユウキのいずれか。火曜のうちに名前を決める。</td></tr>
+      <tr><td>店側の担当者名</td><td>追いのメールが「問い合わせ窓口」ではなく人に届くように。</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="8">BEEPが断った場合</h2>
+  <div class="card">
+    <ul>
+      <li><strong>秋葉原の他店:</strong> スーパーポテト、駿河屋 秋葉原店ゲーム館、レトロゲームキャンプ、トレーダー。</li>
+      <li><strong>オンライン:</strong> BOOTH、メルカリShops。どちらも海外インディーの現物を扱えて、店との関係が要らない。</li>
+      <li><strong>イベント:</strong> ゲームレジェンド、コミケ。客層がそのままで、1日で何本か出る。</li>
+      <li><strong>先にメディア、後で店:</strong> Steveのインタビューを公開して反応を出してから、売り込みではなく数字を持って店に入り直す。</li>
+    </ul>
+    <p class="note">火曜のNOは日程の問題であって、商品の評価ではない。上のどれも開発者が帰国した後でも動く。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="9">役割とお金・未定</h2>
+  <div class="card">
+    <p>ユウキ側の条件はあえて空けてある。決めるのは3人の合意であって、こちらが勝手に置くものではないため。形としては3つ。</p>
+    <ul>
+      <li><strong>A. 当日の通訳。</strong> 単発のフィー、半日、それ以上の義務なし。</li>
+      <li><strong>B. 日本での営業代行。</strong> 店との関係・追加納品・日本語の事務まで継続して持ち、日本国内売上の◯％。</li>
+      <li><strong>C. 交換。</strong> 現金のやり取り無し。Steveのチャンネルが秋葉原ツアーを紹介し、ユウキのツアーがこのゲームを紹介する。</li>
+    </ul>
+    <p class="note">どれを出すかはユウキが決める。現時点で何も合意していない。</p>
+  </div>
+</section>
+
+<footer>
+  このページは作業用のメモであって、合意書ではない。「未確定」と書いてあるものは本当に未確定。<br>
+  ユウキ・Steve・開発者の3者共有用 · 2026年9月19日
+</footer>
+</div>
+
+<!-- ================= 繁體中文 ================= -->
+<div data-lang="zh" hidden>
+<header>
+  <div class="langbar">
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+    <button type="button" data-set="ja" aria-pressed="false">日本語</button>
+    <button type="button" data-set="zh" aria-pressed="true">繁體中文</button>
+  </div>
+  <div class="kicker">工作計畫・共享文件</div>
+  <h1>把N64新作卡帶<br>擺上秋葉原的貨架</h1>
+  <p class="sub">一份簡短而誠實的計畫，目標是讓一款德國製作的 Nintendo 64 新遊戲進入日本店面。依據 2026 年 9 月 19 日 Yuuki 與 Steve 的通話整理。</p>
+  <p class="meta">共享對象: 開發者 / Steve（Stephen O'Neill）/ Yuuki（市原有希）&nbsp;|&nbsp; 最後更新 2026年9月19日</p>
+</header>
+
+<div class="deadline">
+  <div class="t">只有一天能動</div>
+  <div class="b">開發者將於<strong>9月22日（週二）晚間</strong>飛回德國。能親自把東西帶去店裡的時間，只有<strong>週二白天</strong>。BEEP 秋葉原週三公休，這趟行程沒有第二次機會。</div>
+</div>
+
+<section>
+  <h2 data-n="1">目前已知的事</h2>
+  <div class="card">
+    <ul>
+      <li>Steve 獨自去了<strong>東京電玩展 2026</strong>，並在 9 月 18 日於會場認識了一位<strong>德國遊戲開發者</strong>，也為 YouTube 錄了一段訪談。</li>
+      <li>對方做的是<strong>Nintendo 64 的全新作品</strong>——不是移植，也不是復刻，而是復古風格的新遊戲，另外<strong>也有 Steam 版</strong>。</li>
+      <li>目前共有兩款作品。</li>
+      <li>卡帶內建<strong>WiFi，可以在 N64 實機上連線對戰</strong>。這是最大的賣點。</li>
+      <li>Steve 目前<strong>手上就有一片實體卡帶</strong>。</li>
+      <li>開發者想賣的是<strong>日本市場的實體卡帶</strong>，重點不在 Steam。</li>
+      <li>目標店家是<strong>BEEP 秋葉原</strong>。Steve 表示該店的丸山先生對復刻類的專案有興趣。</li>
+      <li>對 Yuuki 的請託是<strong>用日文負責業務洽談</strong>——帶商品進去、說明、談條件。</li>
+    </ul>
+    <p class="note">來源: 2026年9月19日 10:32–10:49 JST 的 Google Meet 自動字幕。Steve 是日文學習者、字幕辨識誤差很大，以上為還原整理，並非逐字紀錄。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="2">已確定的行程</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">9/19（六）<em>已完成</em></div>
+      <div class="what">Yuuki 與 Steve 通話。接下請託，行程已先卡位。</div>
+    </div>
+    <div class="slot key">
+      <div class="when">9/22（二）<em>13:00–15:00</em></div>
+      <div class="what">與 Steve、開發者一同前往 BEEP 秋葉原。<span class="tag">尚未與店家確認</span></div>
+    </div>
+    <div class="slot">
+      <div class="when">9/22（二）<em>晚間</em></div>
+      <div class="what">開發者飛回德國。</div>
+    </div>
+    <div class="slot">
+      <div class="when">9/23（三）<em>11:00–13:00</em></div>
+      <div class="what">與 Steve 和 Erica 午餐。檢討與後續，屆時開發者已離開日本。</div>
+    </div>
+    <p class="note">BEEP 秋葉原: 千代田區神田練塀町 15-1，SEEKBASE 內（秋葉原車站東側、高架橋下）。11:00–20:00，週三公休。地址為 2026 年 7 月確認，出發前仍建議先打一通電話。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="3">週二之前要填好的空格</h2>
+  <div class="card">
+    <ol class="q">
+      <li><strong>開發者是誰？</strong> 姓名、工作室、官方網站、遊戲名稱。通話中一項都沒記下來。沒有這些，Yuuki 無法準備洽談。<span class="who">Steve</span></li>
+      <li><strong>約好了嗎？</strong> 丸山先生是否已同意週二下午碰面，還是我們直接走進去？如果還沒有人聯絡，今天就得有人聯絡。<span class="who">Steve</span></li>
+      <li><strong>開發者希望的條件是什麼？</strong> 寄售還是店家買斷？建議售價？最低能接受的分成？<span class="who">開發者</span></li>
+      <li><strong>目前日本有幾片？</strong> 之後又能從德國寄來幾片？<span class="who">開發者</span></li>
+      <li><strong>有沒有日文印刷品？</strong> 外盒、說明書，哪怕只是一張夾頁也好。英文包裝賣得掉，但多一張日文紙會差很多。<span class="who">開發者</span></li>
+      <li><strong>誰負責進口、誰保管庫存？</strong> 需要有人當進口人，也需要有人放這些箱子。這類案子通常就是卡在這裡。<span class="who">三人共同</span></li>
+      <li><strong>卡帶上用的是哪一顆無線模組？</strong> 或者 WiFi 其實在主機端而不在卡帶上？這決定了日本的無線認證是否構成問題（請見第 6 節）。<span class="who">開發者</span></li>
+      <li><strong>Yuuki 的角色與報酬？</strong> 單次口譯，還是長期的日本業務代理？這件事要在週二之前講清楚，不是之後。<span class="who">Yuuki</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="4">週二當天的流程</h2>
+  <div class="card">
+    <div class="slot">
+      <div class="when">–12:00</div>
+      <div class="what">Yuuki 中午前都有課，上午無法會合。</div>
+    </div>
+    <div class="slot">
+      <div class="when">12:40</div>
+      <div class="what">在 SEEKBASE 門口與 Steve、開發者會合。用十分鐘確認誰講哪一段。</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:00</div>
+      <div class="what">進 BEEP。Yuuki 以日文主談，Steve 為開發者翻譯。若店家允許，就用實機把遊戲跑給他們看。</div>
+    </div>
+    <div class="slot">
+      <div class="when">13:45</div>
+      <div class="what">要嘛拿到帶數字的 YES，要嘛乾脆地收在「之後用電子郵件寄提案給您」。無論如何，一定要帶走對方的姓名與收件地址。</div>
+    </div>
+    <div class="slot">
+      <div class="when">之後</div>
+      <div class="what">Yuuki 當天就把談定的內容寫成日文寄出，趕在開發者的班機之前。</div>
+    </div>
+    <p class="note">如果 Steve 想在店內拍攝，請在預約時就取得許可，不要到了門口才問。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="5">洽談的內容</h2>
+  <div class="card">
+    <h3>先講別人沒有的那件事</h3>
+    <p><strong>能在 N64 實機上透過 WiFi 連線對戰的新卡帶</strong>，不是復古重製，而是 1998 年根本不存在的東西。這句話會是店員拿去跟客人重複的一句，所以我們第一句就得講它。</p>
+    <h3>為什麼是這家店</h3>
+    <p>BEEP 本來就在做同人與獨立作品的寄售，客群正好就是「家裡還有一台能動的 N64」的人。我們不是去拜託人情，而是帶來適合他們貨架的商品。</p>
+    <h3>除了貨以外我們能帶什麼</h3>
+    <p>Steve 經營兩個 YouTube 頻道——<strong>Moving Socks 2.0</strong>（17.8 萬訂閱）與 <strong>Stevo's Hobbies</strong>（1.76 萬訂閱，專做復古主機改造），而且已經在 TGS 拍好開發者訪談。在貨架的 POP 上放一個指向該影片的 QR code，對店家而言就是免費的客流。Yuuki 這邊也有秋葉原導覽行程，可以把來日本的粉絲帶進店裡。</p>
+    <h3>要求要小</h3>
+    <p>不要談大單。先請他們<strong>以寄售方式放 10～20 片</strong>，看看賣況。小、可以隨時收手、容易點頭。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="6">簽約之前要先踩穩的地基</h2>
+  <div class="card">
+    <h3>會卡住的是電波法</h3>
+    <p>如果 <strong>WiFi 模組是裝在卡帶基板上</strong>，那我們在日本賣的就是無線設備，而在日本販售的無線設備需要日本的技術基準適合證明——也就是<strong>技適標章</strong>。日本店家通常會拒絕沒有技適的無線硬體，而 BEEP 正是知道這件事的那種店。乾淨的答案有兩個: 基板本來就採用已取得技適的模組（例如 ESP-WROOM-32），或是日本出貨的產品明載「連線功能在日本國內未取得技適」。</p>
+    <p><strong>週二之前，先向開發者問清楚基板上用的是哪一顆無線模組。</strong>如果 WiFi 其實在主機端而不在卡帶上，這個問題就整個消失——但我們得先知道是哪一種。洽談時<strong>由我們主動提出</strong>: 自己先講，看起來是內行；被店家點出來，看起來是外行。</p>
+    <h3>其餘都是常規</h3>
+    <ul>
+      <li><strong>寄售抽成:</strong> 秋葉原的同人／Homebrew 硬體，店家抽成 20〜30% 是常見區間。</li>
+      <li><strong>通關:</strong> 遊戲卡帶關稅 0%。以商用數量進口時，需課 10% 的進口消費稅。</li>
+      <li><strong>CERO 分級:</strong> 不需要。Homebrew 本來就在分級制度之外。</li>
+      <li><strong>商標:</strong> 包裝上不得使用任天堂商標或「NINTENDO 64」標誌，只能用「相容於 N64」這類表述。</li>
+      <li><strong>保固:</strong> 復古主機個體差異極大，請加註一行說明初期不良由開發者直接處理。</li>
+    </ul>
+    <p class="note">此為案頭調查，並非法律意見。技適一項尤其應先向開發者確認，若確實適用，再請教實際進口過無線硬體的人。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="7">要帶回來的數字</h2>
+  <div class="card">
+    <table>
+      <tr><th>項目</th><th>為什麼需要</th></tr>
+      <tr><td>寄售抽成（％）</td><td>決定了從德國寄貨過來這件事到底划不划算。</td></tr>
+      <tr><td>日圓售價</td><td>扣掉運費與店家抽成後仍成立，且擺在二手 N64 遊戲旁邊不會顯得奇怪。</td></tr>
+      <tr><td>首批出貨數量</td><td>從小開始。需要補貨是好問題。</td></tr>
+      <tr><td>付款週期與方式</td><td>匯往德國的跨境付款——Wise 或銀行匯款，以及多久一次。</td></tr>
+      <tr><td>庫存由誰保管</td><td>店家、Steve 或 Yuuki。週二當天就把名字定下來。</td></tr>
+      <tr><td>店家的窗口姓名</td><td>讓後續的郵件寄到一個人手上，而不是客服信箱。</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="8">如果 BEEP 拒絕</h2>
+  <div class="card">
+    <ul>
+      <li><strong>秋葉原其他店家:</strong> Super Potato、駿河屋 秋葉原店遊戲館、Retro Game Camp、Trader。</li>
+      <li><strong>線上:</strong> BOOTH 與 Mercari Shops，兩者都能處理海外獨立作品的實體商品，而且不需要店家關係。</li>
+      <li><strong>活動:</strong> Game Legend 與 Comiket，客群完全吻合，一天就能賣掉幾片。</li>
+      <li><strong>先媒體、後通路:</strong> 先把 Steve 的訪談發出去，等需求浮現，再帶著數字而不是推銷走回店裡。</li>
+    </ul>
+    <p class="note">週二的 NO 是行程問題，不是對商品的評價。上面每一條在開發者回國之後都還能繼續推進。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-n="9">角色與報酬・未定</h2>
+  <div class="card">
+    <p>Yuuki 這一側的條件刻意留白，因為這應該由三方談定，而不是先預設。可能的三種形式:</p>
+    <ul>
+      <li><strong>A. 當天的口譯。</strong> 單次費用、一個下午，沒有後續義務。</li>
+      <li><strong>B. 日本的業務代理。</strong> 長期承擔店家關係、補貨、日文行政事務，收取日本銷售額的一定比例。</li>
+      <li><strong>C. 交換。</strong> 不涉及金錢；Steve 的頻道介紹秋葉原導覽，Yuuki 的導覽行程介紹這款遊戲。</li>
+    </ul>
+    <p class="note">要端出哪一種由 Yuuki 決定。目前三方尚未達成任何協議。</p>
+  </div>
+</section>
+
+<footer>
+  本頁為工作用文件，並非協議。標示為「未確認」的內容就是尚未確認。<br>
+  供 Yuuki、Steve 與開發者三方共享 · 2026年9月19日
+</footer>
+</div>
+
+</div>
+<script>
+(function(){
+  var order=['en','ja','zh'];
+  var docLang={en:'en',ja:'ja',zh:'zh-Hant'};
+  function set(l){
+    if(order.indexOf(l)<0) l='en';
+    order.forEach(function(k){
+      document.querySelector('[data-lang="'+k+'"]').hidden=(k!==l);
+    });
+    document.querySelectorAll('.langbar button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.set===l));
+    });
+    document.documentElement.lang=docLang[l];
+    try{localStorage.setItem('n64lang',l);}catch(e){}
+    location.hash=l;
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.langbar button');
+    if(b){set(b.dataset.set); window.scrollTo(0,0);}
+  });
+  var init=(location.hash||'').replace('#','');
+  if(order.indexOf(init)<0){
+    try{init=localStorage.getItem('n64lang')||'';}catch(e){init='';}
+  }
+  if(order.indexOf(init)<0){
+    var n=(navigator.language||'en').toLowerCase();
+    init = n.indexOf('ja')===0 ? 'ja' : (n.indexOf('zh')===0 ? 'zh' : 'en');
+  }
+  set(init);
+})();
+</script>
+</body>
+</html>
